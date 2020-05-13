@@ -12,10 +12,7 @@ export default class App extends Component {
   getDataUsingGet(){
     axios.get('https://api.github.com/repos/facebook/react')
     .then(function(response){
-      alert("Foo1 = "+response.data.id +"\nFoo2 = "+ response.data.node_id); 
-      
-
-      
+      alert("Id = "+response.data.id +"\nNode_id = "+ response.data.node_id); 
     }); 
   }
 
