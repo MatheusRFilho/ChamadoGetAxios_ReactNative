@@ -10,14 +10,11 @@ export default class App extends Component {
 
   
   getDataUsingGet(){
-    axios.get('https://api.github.com/repos/facebook/react')
+    axios.get('https://postman-echo.com/get?foo1=bar1&foo2=bar2')
     .then(function(response){
-      alert("Id = "+response.data.id +"\nNode_id = "+ response.data.node_id); 
+      alert("Foo1 = "+response.data.foo1 +"\nFoo2 = "+ response.data.foo2); 
     }); 
   }
-
-  
-
  
   render() {
     return (
