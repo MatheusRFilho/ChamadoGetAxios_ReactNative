@@ -4,26 +4,29 @@ import { StyleSheet, Text, ImageBackground, TouchableOpacity, View} from 'react-
 import axios from 'axios';
 
 export default class Index extends Component {
-
-  getData(){
-    axios.get('https://postman-echo.com/get?foo1=bar1&foo2=bar2')
-    .then(function(response){
-      alert("Foo1 = "+response.data.foo1 +"\nFoo2 = "+ response.data.foo2); 
+  
+   
+  getData = () => {
+    axios.get('https://api.github.com/repos/facebook/react')
+    .then(function (response){
+      alert("ID = "+response.data.id +"\nName = "+response.data.name); 
+      console.log(response.data);
     }); 
   }
- 
+  
   render() {
     return (
       <ImageBackground source={require('../assets/fundo.jpeg')} style={styles.image}>
         
           <TouchableOpacity
             style={styles.button}
-            onPress={this.getData()}
+            onClick={this.getData()}
             >
               <Text style={styles.text}>Botão</Text>
           </TouchableOpacity>
       
       </ImageBackground>
+      
     );
   }
 }
