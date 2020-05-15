@@ -20,7 +20,7 @@ export default class Index extends Component {
         
           <TouchableOpacity
             style={styles.button}
-            onClick={this.getData()}
+            onClick={() => {this.getData())}
             >
               <Text style={styles.text}>Botão</Text>
           </TouchableOpacity>
